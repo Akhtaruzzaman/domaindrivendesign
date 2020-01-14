@@ -8,5 +8,6 @@ namespace Common
     {
         public static bool IS_DEV_MODE = false;
         public static string ConnectionString = "";
+        public static string URL = "http://localhost:23144";
     }
 }

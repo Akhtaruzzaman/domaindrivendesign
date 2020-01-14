@@ -115,12 +115,12 @@ namespace Repository.Repo
                 throw ex;
             }
         }
-        public async Task<IQueryable<TEntity>> GetAll(Guid id)
+        public IQueryable<TEntity> GetAll()
         {
             try
             {
-                var entity = this.context.Set<TEntity>().Where(x => x.Id.Equals(id));
-                return await Task.FromResult(entity);
+                var entity = this.context.Set<TEntity>();
+                return entity;
             }
             catch (Exception ex)
             {
@@ -128,12 +128,12 @@ namespace Repository.Repo
                 throw ex;
             }
         }
-        public async Task<IQueryable<TEntity>> GetAll(Expression<Func<TEntity, bool>> expression)
+        public IQueryable<TEntity> GetAll(Expression<Func<TEntity, bool>> expression)
         {
             try
             {
                 var entities = this.context.Set<TEntity>().Where(expression);
-                return await Task.FromResult(entities);
+                return entities;
             }
             catch (Exception ex)
             {

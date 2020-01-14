@@ -18,8 +18,8 @@ namespace Repository.IRepo
         Task<bool> Delete(Guid id);
         Task<bool> DeleteRange(List<T> entities);
         Task<T> Get(Guid id);
-        Task<IQueryable<T>> GetAll(Guid id);
-        Task<IQueryable<T>> GetAll(Expression<Func<T, bool>> expression);
+        IQueryable<T> GetAll();
+        IQueryable<T> GetAll(Expression<Func<T, bool>> expression);
         Task<T> GetAny(Expression<Func<T, bool>> expression);
         Guid GetGuid();
     }
